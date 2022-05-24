@@ -13,5 +13,34 @@
         {
             return n1 * n2; // metodo tem erro.
         }
+        //metodo para calcular a subtração de 2 numeros
+        public int Subtrair(int n1, int n2)
+        {
+            return n1 - n2; // metodo tem erro.
+        }
+        //metodo para calcular a divisao de 2 numeros
+        public int Dividir(int n1, int n2)
+        {
+           
+            try
+            {
+
+                return n1 / n2; // metodo tem erro.
+
+            }
+            catch (DivideByZeroException)
+            {
+                throw new Exception("divisao por zero");
+
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception(e.Message);
+
+            }
+        }
+
+      
     }
 }
