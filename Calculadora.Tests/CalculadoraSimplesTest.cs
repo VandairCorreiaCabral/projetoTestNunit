@@ -70,6 +70,41 @@ namespace Calculadora.Tests
 
 
         //}
+
+       
+
+
+        [Test]
+        public void AdicionarDecimal_Sucesso()
+        {
+            var sut = new CalculadoraSimples();
+            var retorno = sut.AdicionarDecimais(1.1M, 2.2M);
+            Assert.That(retorno,Is.EqualTo(3.3));
+        }
+
+        [Test]
+        public void AdicionarDuble_Sucesso()
+        {
+            var sut = new CalculadoraSimples();
+            var retorno = sut.AdicionarDouble(1.1, 2.2);
+            Assert.That(retorno, Is.EqualTo(3.3));
+        }
+        [Test]
+        public void AdicionarDuble_Com_Within_Sucesso()
+        {
+            var sut = new CalculadoraSimples();
+            var retorno = sut.AdicionarDouble(1.1, 2.2);
+            Assert.That(retorno, Is.EqualTo(3.3).Within(0.01)); //aceita tolerancia de ate 0.01 ou seja diferença de ate 0.01
+        }
+
+        [Test]
+        public void AdicionarDuble_Com_WithinPercentual_Sucesso()
+        {
+            var sut = new CalculadoraSimples();
+            var retorno = sut.AdicionarDouble(50, 50);
+            Assert.That(retorno, Is.EqualTo(99.5).Within(1).Percent); //aceita tolerancia de ate 1% ou seja diferença de ate 1
+        }
+
     }
   
 }
